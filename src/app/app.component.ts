@@ -3,13 +3,16 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <h1 class="text-4xl text-orange-500 text-center my-12">Soyez réactif avec les Observables</h1>
-		<router-outlet />`,
-  styles: [],
   imports: [
     RouterOutlet
-  ]
+  ],
+  template: `
+		<div class="max-w-wide mx-auto text-center">
+			<h1 class="text-4xl text-orange-500 my-12">Soyez réactif avec les Observables</h1>
+			<p>Choisissez un chapitre :</p>
+			<router-outlet/>
+		</div>
+  `
 })
 export class AppComponent {
 }
