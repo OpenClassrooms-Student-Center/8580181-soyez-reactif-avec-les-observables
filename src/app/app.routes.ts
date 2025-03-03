@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: 'create-an-observable', loadComponent: () => import('./chapters/create-an-observable/home.component').then(m => m.HomeComponent) },
-  { path: 'basic-operators', loadComponent: () => import('./chapters/basic-operators/home.component').then(m => m.HomeComponent) },
-  { path: 'higher-order-operators', loadComponent: () => import('./chapters/higher-order-operators/home.component').then(m => m.HomeComponent) },
-  { path: 'unsubscribe-strategies', loadComponent: () => import('./chapters/unsubscribe-strategies/home.component').then(m => m.HomeComponent) },
+  { path: 'create-an-observable', loadComponent: () => import('./chapitres/chapitre-2/home.component').then(m => m.HomeComponent) },
+  { path: 'basic-operators', loadComponent: () => import('./chapitres/chapitre-3/home.component').then(m => m.HomeComponent) },
+  { path: 'higher-order-operators', loadComponent: () => import('./chapitres/chapitre-5/home.component').then(m => m.HomeComponent) },
+  { path: 'unsubscribe-strategies', loadComponent: () => import('./chapitres/chapitre-4/home.component').then(m => m.HomeComponent) },
 ];
