@@ -11,7 +11,9 @@ import { ChapterTitleComponent } from '../../shared/chapter-title/chapter-title.
   ],
   template: `
     <app-chapter-title>Manipulez les émissions avec les opérateurs bas niveau</app-chapter-title>
-		<p class="text-xl mt-3 text-orange-600 font-bold">{{ interval$ | async }}</p>
+		<p class="text-xl mt-3 text-orange-600 font-bold">
+      {{ interval$ | async }}
+    </p>
   `,
   styles: ``
 })
