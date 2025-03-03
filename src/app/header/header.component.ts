@@ -1,28 +1,42 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { filter, tap } from 'rxjs';
 
 @Component({
   selector: 'app-header',
-  imports: [
-    RouterLink
-  ],
   template: `
-		<header class="mb-6">
-			<h1 class="text-4xl text-orange-500 my-12">Soyez réactif avec les Observables</h1>
-			<p>Choisissez un chapitre :</p>
+		<header class="mb-12">
+			<h1 class="text-4xl text-orange-500 mt-12 mb-6">Soyez réactif avec les Observables</h1>
 			<nav>
-				<ul class="list-image-none">
-					<li><a routerLink="create-an-observable">Créez un Observable et souscrivez-y</a></li>
-					<li><a routerLink="basic-operators">Manipulez les émissions avec les opérateurs bas niveau</a></li>
-					<li><a routerLink="unsubscribe-strategies">Évitez les fuites de mémoire avec des stratégies de unsubscribe</a>
-					</li>
-					<li><a routerLink="higher-order-operators">Passez d'un Observable à un autre avec les opérateurs haut
-						niveau</a></li>
-				</ul>
+				<p class="text-gray-600">Choisissez un chapitre :</p>
+				<select class="border-2 border-gray-300 p-1 text-gray-600" [formControl]="routeCtrl">
+          <option disabled value="">-- Veuillez sélectionner un chapitre --</option>
+					<option value="create-an-observable">Créez un Observable et souscrivez-y</option>
+					<option value="basic-operators">Manipulez les émissions avec les opérateurs bas niveau</option>
+					<option value="unsubscribe-strategies">Évitez les fuites de mémoire avec des stratégies de unsubscribe
+					</option>
+					<option value="higher-order-operators">Passez d'un Observable à un autre avec les opérateurs haut niveau
+					</option>
+				</select>
 			</nav>
 		</header>
   `,
+  imports: [
+    ReactiveFormsModule
+  ]
 })
 export class HeaderComponent {
+  routeCtrl = new FormControl<string>('');
 
+  private router = inject(Router);
+
+  constructor() {
+    this.routeCtrl.valueChanges.pipe(
+      takeUntilDestroyed(),
+      filter(route => route !== null),
+      tap(route => this.router.navigateByUrl(route))
+    ).subscribe();
+  }
 }
