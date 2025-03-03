@@ -11,9 +11,7 @@ import { HeaderComponent } from './header/header.component';
   template: `
 		<div class="max-w-wide mx-auto text-center">
 			<app-header/>
-			<div class="border-2 border-orange-100">
-				<router-outlet/>
-			</div>
+			<router-outlet/>
 		</div>
   `
 })
