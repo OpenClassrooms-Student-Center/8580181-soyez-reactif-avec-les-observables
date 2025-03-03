@@ -33,6 +33,10 @@ export class HeaderComponent {
   private router = inject(Router);
 
   constructor() {
+    this.navigateOnRouteCtrlChange();
+  }
+
+  private navigateOnRouteCtrlChange() {
     this.routeCtrl.valueChanges.pipe(
       takeUntilDestroyed(),
       filter(route => route !== null),
