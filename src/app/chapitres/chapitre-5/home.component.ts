@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { ChapterTitleComponent } from '../../shared/chapter-title/chapter-title.component';
 
 @Component({
   selector: 'app-higher-order-operators',
-  imports: [],
+  imports: [
+    ChapterTitleComponent
+  ],
   template: `
-		<h1 class="text-2xl text-gray-600">Passez d'un Observable à un autre avec les opérateurs haut niveau</h1>
+    <app-chapter-title>Passez d'un Observable à un autre avec les opérateurs haut niveau</app-chapter-title>
   `,
   styles: ``
 })

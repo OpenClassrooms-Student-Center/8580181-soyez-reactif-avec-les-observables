@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { interval, tap } from 'rxjs';
 import { ConsoleTipComponent } from '../../shared/console-tip/console-tip.component';
+import { ChapterTitleComponent } from '../../shared/chapter-title/chapter-title.component';
 
 @Component({
   selector: 'app-unsubscribe-strategies',
   imports: [
-    ConsoleTipComponent
+    ConsoleTipComponent,
+    ChapterTitleComponent
   ],
   template: `
-    <h1 class="text-2xl text-gray-600">Évitez les fuites de mémoire avec des stratégies de unsubscribe</h1>
+    <app-chapter-title>Évitez les fuites de mémoire avec des stratégies de unsubscribe</app-chapter-title>
 		<app-console-tip/>
   `,
   styles: ``

@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { ConsoleTipComponent } from '../../shared/console-tip/console-tip.component';
+import { ChapterTitleComponent } from '../../shared/chapter-title/chapter-title.component';
 
 @Component({
   selector: 'app-home',
   imports: [
-    ConsoleTipComponent
+    ConsoleTipComponent,
+    ChapterTitleComponent
   ],
   template: `
-    <h1 class="text-2xl text-gray-600">Créez un Observable et souscrivez-y</h1>
+    <app-chapter-title>Créez un Observable et souscrivez-y</app-chapter-title>
     <app-console-tip/>
   `,
   styles: ``
