@@ -10,7 +10,6 @@ import { filter, tap } from 'rxjs';
 		<header class="mb-12">
 			<h1 class="text-4xl text-orange-500 mt-12 mb-6">Soyez réactif avec les Observables</h1>
 			<nav>
-				<p class="text-gray-600">Choisissez un chapitre :</p>
 				<select class="border-2 border-gray-300 p-1 text-gray-600" [formControl]="routeCtrl">
           <option disabled value="">-- Veuillez sélectionner un chapitre --</option>
 					<option value="create-an-observable">Créez un Observable et souscrivez-y</option>
