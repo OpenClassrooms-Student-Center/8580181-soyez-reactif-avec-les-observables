@@ -21,6 +21,6 @@ export class HomeComponent {
   );
 
   constructor() {
-    this.interval$.subscribe();
+    // this.interval$.subscribe();
   }
 }
