@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ConsoleTipComponent } from '../../ui-elements/console-tip/console-tip.component';
-import { ChapterTitleComponent } from '../../ui-elements/chapter-title/chapter-title.component';
+import { ChapterTitleComponent, ConsoleTipComponent } from '@ui-elements';
 
 @Component({
   selector: 'app-home',
