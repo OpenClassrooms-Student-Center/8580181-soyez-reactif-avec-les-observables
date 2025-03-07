@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { interval } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
-import { ChapterTitleComponent } from '../../shared/chapter-title/chapter-title.component';
+import { ChapterTitleComponent } from '../../ui-elements/chapter-title/chapter-title.component';
 
 @Component({
   selector: 'app-basic-operators',

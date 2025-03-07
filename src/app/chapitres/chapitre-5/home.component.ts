@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChapterTitleComponent } from '../../shared/chapter-title/chapter-title.component';
+import { ChapterTitleComponent } from '../../ui-elements/chapter-title/chapter-title.component';
 
 @Component({
   selector: 'app-higher-order-operators',

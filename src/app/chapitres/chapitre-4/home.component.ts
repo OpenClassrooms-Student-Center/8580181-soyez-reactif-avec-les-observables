@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { interval, tap } from 'rxjs';
-import { ConsoleTipComponent } from '../../shared/console-tip/console-tip.component';
-import { ChapterTitleComponent } from '../../shared/chapter-title/chapter-title.component';
+import { ConsoleTipComponent } from '../../ui-elements/console-tip/console-tip.component';
+import { ChapterTitleComponent } from '../../ui-elements/chapter-title/chapter-title.component';
 
 @Component({
   selector: 'app-unsubscribe-strategies',
