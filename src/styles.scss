@@ -8,6 +8,9 @@
   a {
     @apply text-orange-700 hover:underline;
   }
+  button {
+    @apply px-2 py-1 border-2 border-gray-400 shadow
+  }
 }
 
 @utility max-w-wide {
