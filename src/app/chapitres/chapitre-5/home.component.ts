@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ChapterTitleComponent } from '@ui-elements';
 import { concatMap, exhaustMap, interval, map, mergeMap, Observable, startWith, Subject, switchMap, take } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 type MappingOperatorName = 'merge' | 'concat' | 'switch' | 'exhaust';
 
@@ -11,7 +11,6 @@ type MappingOperatorName = 'merge' | 'concat' | 'switch' | 'exhaust';
   imports: [
     ChapterTitleComponent,
     AsyncPipe,
-    FormsModule,
     ReactiveFormsModule
   ],
   templateUrl: './home.component.html',
