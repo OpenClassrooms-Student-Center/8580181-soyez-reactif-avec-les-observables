@@ -14,38 +14,7 @@ type MappingOperatorName = 'merge' | 'concat' | 'switch' | 'exhaust';
     FormsModule,
     ReactiveFormsModule
   ],
-  template: `
-		<app-chapter-title>Passez d'un Observable à un autre avec les opérateurs haut niveau</app-chapter-title>
-		<label for="merge" class="block">
-			mergeMap
-			<input type="radio" id="merge" [formControl]="mappingOperatorCtrl" value="merge">
-		</label>
-		<label for="concat" class="block">
-			concatMap
-			<input type="radio" id="concat" [formControl]="mappingOperatorCtrl" value="concat">
-		</label>
-		<label for="switch" class="block">
-			switchMap
-			<input type="radio" id="switch" [formControl]="mappingOperatorCtrl" value="switch">
-		</label>
-		<label for="exhaust" class="block">
-			exhaustMap
-			<input type="radio" id="exhaust" [formControl]="mappingOperatorCtrl" value="exhaust">
-		</label>
-		<div class="m-3">
-			<button (click)="onSelectColour('red')" class="mx-1">Rouge</button>
-			<button (click)="onSelectColour('green')" class="mx-1">Vert</button>
-			<button (click)="onSelectColour('blue')" class="mx-1">Bleu</button>
-		</div>
-		<div class="flex gap-3 w-fit m-auto items-center">
-      <div class="w-6 h-6 border-2 border-gray-400" [style.background-color]="selectedColour$ | async"></div>
-			<div class="w-48 m-auto h-6 border-2 border-gray-400">
-				@if (activeFlow$ | async; as flow) {
-					<div class="h-full" [style.width]="flow.value" [style.background-color]="flow.colour"></div>
-				}
-			</div>
-		</div>
-  `,
+  templateUrl: './home.component.html',
   styles: ``
 })
 export class HomeComponent {
