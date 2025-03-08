@@ -24,7 +24,7 @@ export class HomeComponent {
     tap(console.log)
   );
 
-  stopsAt5$ = interval(1000).pipe(
+  stopsAt5$ = this.interval$.pipe(
     take(6)
   );
 
