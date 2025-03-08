@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { ChapterTitleComponent } from '@ui-elements';
-import { concatMap, exhaustMap, interval, map, mergeMap, Observable, startWith, Subject, switchMap, take } from 'rxjs';
+import { concatMap, exhaustMap, interval, map, mergeMap, startWith, Subject, switchMap, take } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-
-type MappingOperatorName = 'merge' | 'concat' | 'switch' | 'exhaust';
+import { MappingOperatorName } from './mapping-operator-name';
+import { Flow } from './flow';
 
 @Component({
   selector: 'app-higher-order-operators',
@@ -20,7 +20,7 @@ export class HomeComponent {
   mappingOperatorCtrl = new FormControl<MappingOperatorName>('merge', { nonNullable: true });
   selectedColour$ = new Subject<string>();
 
-  private flowObservables: Record<MappingOperatorName, Observable<{ colour: string, value: string }>> = {
+  private flowObservables: Record<MappingOperatorName, Flow> = {
     merge: this.selectedColour$.pipe(
       mergeMap(colour => this.generateFlow(colour))
     ),
@@ -35,7 +35,7 @@ export class HomeComponent {
     )
   };
 
-  activeFlow$: Observable<{ colour: string, value: string }> = this.mappingOperatorCtrl.valueChanges.pipe(
+  activeFlow$: Flow = this.mappingOperatorCtrl.valueChanges.pipe(
     startWith('merge' as const),
     switchMap(mappingOperator => this.flowObservables[mappingOperator])
   );
@@ -44,7 +44,7 @@ export class HomeComponent {
     this.selectedColour$.next(colour);
   }
 
-  private generateFlow(colour: string): Observable<{ colour: string, value: string }> {
+  private generateFlow(colour: string): Flow {
     return interval(25).pipe(
       take(101),
       map(value => ({
