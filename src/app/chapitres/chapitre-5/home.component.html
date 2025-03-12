@@ -1,18 +1,18 @@
 <app-chapter-title>Passez d'un Observable à un autre avec les opérateurs haut niveau</app-chapter-title>
 <h2 class="mt-6 mb-3 text-xl text-orange-600">Utilisez l'outil ci-dessous pour visualiser les différents opérateurs</h2>
-<label for="merge" class="block">
+<label for="merge" class="block cursor-pointer">
 	mergeMap
 	<input type="radio" id="merge" [formControl]="mappingOperatorCtrl" value="merge">
 </label>
-<label for="concat" class="block">
+<label for="concat" class="block cursor-pointer">
 	concatMap
 	<input type="radio" id="concat" [formControl]="mappingOperatorCtrl" value="concat">
 </label>
-<label for="switch" class="block">
+<label for="switch" class="block cursor-pointer">
 	switchMap
 	<input type="radio" id="switch" [formControl]="mappingOperatorCtrl" value="switch">
 </label>
-<label for="exhaust" class="block">
+<label for="exhaust" class="block cursor-pointer">
 	exhaustMap
 	<input type="radio" id="exhaust" [formControl]="mappingOperatorCtrl" value="exhaust">
 </label>

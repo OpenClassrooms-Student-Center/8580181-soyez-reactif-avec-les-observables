@@ -9,7 +9,7 @@
     @apply text-orange-700 hover:underline;
   }
   button {
-    @apply px-2 py-1 border-2 border-gray-400 shadow
+    @apply px-2 py-1 border-2 border-gray-400 shadow cursor-pointer active:bg-orange-100
   }
 }
 
