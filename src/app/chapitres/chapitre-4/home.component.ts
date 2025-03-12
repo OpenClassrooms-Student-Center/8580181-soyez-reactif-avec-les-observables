@@ -2,20 +2,16 @@ import { Component } from '@angular/core';
 import { interval, take, tap } from 'rxjs';
 import { ChapterTitleComponent, ConsoleTipComponent } from '@ui-elements';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-unsubscribe-strategies',
   imports: [
     ConsoleTipComponent,
     ChapterTitleComponent,
-    AsyncPipe
   ],
   template: `
     <app-chapter-title>Évitez les fuites de mémoire avec des stratégies de unsubscribe</app-chapter-title>
 		<app-console-tip/>
-    <p>Stops at 5: {{ stopsAt5$ | async }}</p>
-    <p>Stops when component destroyed: {{ stopsOnDestroy$ | async }}</p>
   `,
   styles: ``
 })
@@ -26,11 +22,11 @@ export class HomeComponent {
 
   stopsAt5$ = this.interval$.pipe(
     take(6)
-  );
+  ).subscribe();
 
   stopsOnDestroy$ = this.interval$.pipe(
     takeUntilDestroyed()
-  );
+  ).subscribe();
 
   constructor() {
     // this.interval$.subscribe();
